@@ -44,11 +44,9 @@ class Neural_Network(object):
     self.backward(X, y, o)
 
 NN = Neural_Network()
-for i in range(100): 
-  print("Input: \n" + str(X) )
-  print("Actual Output: \n" + str(y))
-  print("Predicted Output: \n" + str(NN.forward(X)))
+for i in range(1000): 
   print("Loss: \n" + str(np.mean(np.square(y - NN.forward(X)))))
   print("\n")
   NN.train(X, y)
-print("input \n" + str(Xs))
+print("INPUT: \n" + str(X*100))
+print("PREDICTED OUTPUT: \n" + str(NN.forward(X)*10))
