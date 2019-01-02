@@ -9,7 +9,7 @@ class Neural_Network(object):
   def __init__(self):
     self.inputSize = 1
     self.outputSize = 1
-    self.hiddenSize = 8
+    self.hiddenSize = 3
     self.W1 = np.random.randn(self.inputSize, self.hiddenSize)
     self.W2 = np.random.randn(self.hiddenSize, self.outputSize)
 
