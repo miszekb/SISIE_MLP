@@ -5,11 +5,12 @@ import numpy as np
 class Neural_Network(object):
 
   loss = []
+  learning_rate = 0.9
 
   def __init__(self):
     self.inputSize = 1
     self.outputSize = 1
-    self.hiddenSize = 3
+    self.hiddenSize = 2
     self.W1 = np.random.randn(self.inputSize, self.hiddenSize)
     self.W2 = np.random.randn(self.hiddenSize, self.outputSize)
 
@@ -28,7 +29,7 @@ class Neural_Network(object):
 
   def backward(self, X, y, o):
     self.o_error = y - o 
-    self.o_delta = self.o_error*self.sigmoidPrime(o)
+    self.o_delta = self.learning_rate * self.o_error*self.sigmoidPrime(o)
     self.z2_error = self.o_delta.dot(self.W2.T) 
     self.z2_delta = self.z2_error*self.sigmoidPrime(self.z2)
     self.W1 += X.T.dot(self.z2_delta) 

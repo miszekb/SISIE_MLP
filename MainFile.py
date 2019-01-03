@@ -15,7 +15,7 @@ X = X/np.amax(X, axis=0)
 NN = Neural_Network()
 start_time = time.time()
 
-for i in range(10000):
+for i in range(100):
   NN.loss.append(str(round(np.mean(np.square(y - NN.forward(X))),4))+ "\n")
   NN.train(X, y)
 
