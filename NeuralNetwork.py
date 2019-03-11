@@ -5,7 +5,7 @@ import numpy as np
 class Neural_Network(object):
 
   loss = []
-  learning_rate = 0.9
+  learning_rate = 0.01
 
   def __init__(self):
     self.inputSize = 1
